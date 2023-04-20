@@ -3,6 +3,7 @@
 // const contents;
 
 
+
 // after loading the DOM
 // document.addEventListener('DOMContentLoaded', () => { 
   // use querySelectorAll to select all 'p' elements in the body -> return an array of all 'p' elements
@@ -42,6 +43,9 @@ containerDivBlur.style = "width: 100%; height: 100%; background-color: rgba(0,0,
 
 // containerDivBlur.style = "width: 100%; height: calc(100ch - 50px); background-color: rgba(0,0,0,0.2); position: absolute; z-index: 1; backdrop-filter: blur(3px);"
 
+let rangeVal = document.getElementById("rangeSlider");
+console.log("HELLO!!")
+console.log(rangeVal);
 
 document.querySelectorAll("p").forEach(function(el) {
   // el.innerText = updatedParagraphs[i];

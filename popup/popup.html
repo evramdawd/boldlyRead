@@ -15,10 +15,12 @@
     <!-- <button>Start Timer</button>
     <button>Add Task</button> -->
     <div class="slideContainer">
-      <input type="range" min="0.1" max="1" value="0.5" class="slider" id="rangeSlider">
+      <input type="range" min="0.1" max="1" value="0.5" class="slider" id="rangeSlider" step="any">
+      <!-- onchange="updateInput(this.value);" oninput="updateInput(this.value)" -->
 
       <p>Value: <output id="value"></output></p>
       
+
       <!-- <p>Value: <span id="demo"></span></p> -->
 
         <!-- <input type="text">

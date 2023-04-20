@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Boldly Read",
-    "version": "1.0",
+    "version": "2.0",
     "action": {
       "default_icon": "icon.png", 
       "default_popup": "popup/popup.html"
@@ -9,7 +9,10 @@
     "content_scripts": [
         {
           "matches":["<all_urls>"],
-          "js": ["./main.js"]
+          "js": [
+            "./main.js", 
+            "popup/popup.js"
+          ]
         }
       ]
   }
