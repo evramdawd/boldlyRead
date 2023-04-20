@@ -1,0 +1,44 @@
+/*$img-width: 600px;
+$img-height: 400px;
+$blur-width: 300px;
+$blur-height: 200px;
+$blur-offset: 10px; */
+
+.image {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  background-image: url('https://placekitten.com/1920/1280');
+  background-size: 600px 400px;
+  /* filter: blur(10px); */
+}
+
+.blur-wrap {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: (400px - 200px) / 2;
+  left: (600px - 200px) / 2;
+  overflow: hidden;
+  cursor: move;
+  /* filter: blur(10px); */
+}
+
+.blur {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  bottom: -10px;
+  right: -10px;
+  background-image: url('https://placekitten.com/1920/1280');
+  background-position: ((200px + 10px - 600px) / 2) ((200px + 10px - 400px) / 2);
+  background-size: 600px 400px;
+  filter: blur(10px);
+}
+
+h1 {
+  text-align: center;
+  margin: 10px;
+  font-size: 1.2em;
+}
