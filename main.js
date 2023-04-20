@@ -7,7 +7,7 @@
 // document.addEventListener('DOMContentLoaded', () => { 
   // use querySelectorAll to select all 'p' elements in the body -> return an array of all 'p' elements
   
-  // iterate through the array of 'p' elements
+  /* iterate through the array of 'p' elements
     // on each individual element (each 'p') we use .split to get an array of words
     // loop through each word, get the length of the word, then bold some first letters of each word
       // for bolding, we could put the strong tag before and after
@@ -15,32 +15,62 @@
       // use innerText or innerHTML to change the text
     // take this array and rejoin it (.join) into a single string
     // then replace/update the old paragraph with the new paragraph
+    */
 
-  document.querySelectorAll("p").forEach(function(el) {
-    // el.innerText = updatedParagraphs[i];
 
-      // console.log("para.innerText: ", para.innerText);
-      let parArray = el.innerText.split(' ');
-      console.log("parArray: ", parArray);
-      
-      // Iterating thru Logic for bolding parts of the words:
-      for(let i = 0; i < parArray.length; i++) {
-        // Get length of word: -> assign the number of letters to be bolded based on a Math.floor() of 1/4 of the length of the word.
-        let boldedLength = Math.floor(0.4 * parArray[i].length);
-        if (boldedLength === 0) boldedLength = 1;
-        // parArray[i] --> [L, o, r, e, m]
-        parArray[i] = parArray[i].split("");
-        parArray[i].unshift("<span style=\"font-weight: bold; color: black; background-color: #f7f7f7;\">");
-        parArray[i].splice(boldedLength+1, 0, "</span>");
-        parArray[i] = parArray[i].join("");
-        console.log(parArray[i]);
-      }
-      // push parArray to updatedParagraphs
-      console.log(parArray);
-      parArray = parArray.join(" ")
-      el.innerHTML = parArray;
-      console.log(el.innerText);
-  });
+/*
+width: 100%;
+height: calc(100ch - 50px);
+background-color: rgba(0,0,0,0.2);
+position: absolute;
+z-index: 10;
+backdrop-filter: blur(3px);
+*/
+let body = document.body;
+console.log(body);
+
+// body.style["background-color"] = "blue";
+// body.style["backdrop-filter: blur(10px)"]
+document.querySelector('html').style.overflow = "auto";
+body.style.overflow = "auto";
+body.style.position = "relative";
+body.style.height = "100%";
+
+let containerDivBlur = document.createElement("div");
+body.prepend(containerDivBlur);
+containerDivBlur.style = "width: 100%; height: 100%; background-color: rgba(0,0,0,0.2); position: absolute; z-index: -1; backdrop-filter: blur(2px);"
+
+// containerDivBlur.style = "width: 100%; height: calc(100ch - 50px); background-color: rgba(0,0,0,0.2); position: absolute; z-index: 1; backdrop-filter: blur(3px);"
+
+
+document.querySelectorAll("p").forEach(function(el) {
+  // el.innerText = updatedParagraphs[i];
+
+    // console.log("para.innerText: ", para.innerText);
+    let parArray = el.innerText.split(' ');
+    // console.log("parArray: ", parArray);
+    
+    // Iterating thru Logic for bolding parts of the words:
+    for(let i = 0; i < parArray.length; i++) {
+      // Get length of word: -> assign the number of letters to be bolded based on a Math.floor() of 1/4 of the length of the word.
+      let boldedLength = Math.floor(0.4 * parArray[i].length);
+      if (boldedLength === 0) boldedLength = 1;
+      // parArray[i] --> [L, o, r, e, m]
+      parArray[i] = parArray[i].split("");
+      parArray[i].unshift("<span class=\"focusBlur\" style=\"font-weight: bold; color: black; background-color: #f7f7f7;\">");
+      parArray[i].splice(boldedLength+1, 0, "</span>");
+      parArray[i] = parArray[i].join("");
+      // console.log(parArray[i]);
+    }
+    // push parArray to updatedParagraphs
+    // console.log(parArray);
+    parArray = parArray.join(" ")
+    el.innerHTML = parArray;
+    el.className = "focusBlur"
+    el.style = "position: relative"
+    el.style = "z-index: 1"
+    el.style = "background-color: #f7f7f7"
+});
   
   
   // opacity: 0.3
