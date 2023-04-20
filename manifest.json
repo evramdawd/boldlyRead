@@ -3,7 +3,8 @@
     "name": "Boldly Read",
     "version": "1.0",
     "action": {
-      "default_icon": "icon.png"
+      "default_icon": "icon.png", 
+      "default_popup": "popup/popup.html"
     },
     "content_scripts": [
         {
