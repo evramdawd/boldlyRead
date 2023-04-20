@@ -4,7 +4,7 @@
 
 
 // after loading the DOM
-document.addEventListener('DOMContentLoaded', () => { 
+// document.addEventListener('DOMContentLoaded', () => { 
   // use querySelectorAll to select all 'p' elements in the body -> return an array of all 'p' elements
   
   // iterate through the array of 'p' elements
@@ -15,41 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
       // use innerText or innerHTML to change the text
     // take this array and rejoin it (.join) into a single string
     // then replace/update the old paragraph with the new paragraph
-  
-  // const paragraphs = [...document.body.querySelectorAll('p')];
-  // console.log('hi');
-  // console.log("paragraphs: ", paragraphs);
-  // // declare an empty array, 'updatedParagraphs'
-  
-  // const updatedParagraphs = [];
-  // // ITERATING THROUGH ALL THE <p> TAGS:
-  // for (const para of paragraphs) {
-  //   // console.log("para.innerText: ", para.innerText);
-  //   const parArray = para.innerText.split(' ');
-  //   console.log("parArray: ", parArray);
-    
-  //   // Logic for bolding parts of the words:
-  //   for(let i = 0; i < parArray.length; i++) {
-  //     // Get length of word: -> assign the number of letters to be bolded based on a Math.floor() of 1/4 of the length of the word.
-  //     let boldedLength = Math.floor(0.4 * parArray[i].length);
-  //     if (boldedLength === 0) boldedLength = 1;
-  //     // parArray[i] --> [L, o, r, e, m]
-  //     parArray[i] = parArray[i].split("");
-  //     parArray[i].unshift("<b>");
-  //     parArray[i].splice(boldedLength+1, 0, "</b>");
-  //     parArray[i] = parArray[i].join("");
-  //   }
-  //   // push parArray to updatedParagraphs
-  //   updatedParagraphs.push(parArray);
-  // }
-  // console.log(updatedParagraphs);
-
-  // iterate through the actual DOM elements (with 'p' tag)
-    // for each paragraph, replace it with the paragraph at the corresponding index in updatedParagraphs
-
-    // document.querySelectorAll("footer li a").forEach(function(el) {
-    //   el.style.color = Ftextlink;
-    // });
 
   document.querySelectorAll("p").forEach(function(el) {
     // el.innerText = updatedParagraphs[i];
@@ -65,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (boldedLength === 0) boldedLength = 1;
         // parArray[i] --> [L, o, r, e, m]
         parArray[i] = parArray[i].split("");
-        parArray[i].unshift("<b>");
-        parArray[i].splice(boldedLength+1, 0, "</b>");
+        parArray[i].unshift("<span style=\"font-weight: bold; color: black; background-color: #f7f7f7;\">");
+        parArray[i].splice(boldedLength+1, 0, "</span>");
         parArray[i] = parArray[i].join("");
         console.log(parArray[i]);
       }
@@ -78,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   
+  // opacity: 0.3
   
   // let test = "Lorem";
   // console.log(test.length);
@@ -96,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
 
 
-});
+// });
 
 
 
